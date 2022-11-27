@@ -23,11 +23,11 @@ class MobileBankApiTestV3 {
           // специализированные проверки - лучше
           .contentType(ContentType.JSON)
           .body("", hasSize(3))
-          .body("[0].currency", equalTo("USD"))
+          .body("[0].currency", equalTo("RUB"))
           .body("[0].balance", greaterThanOrEqualTo(0))
-          .body("[1].currency", equalTo("RUB"))
-          .body("[1].balance", lessThanOrEqualTo(0))
-          .body("[2].currency", equalTo("USD"))
+          .body("[1].currency", equalTo("USD"))
+          .body("[1].balance", greaterThanOrEqualTo(0))
+          .body("[2].currency", equalTo("RUB"))
           .body("[2].balance", greaterThanOrEqualTo(0))
       ;
     }
